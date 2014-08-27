@@ -21,6 +21,9 @@ mkdir -p /var/log/z-push
 
 cp -R z-push-2.1.3-1892/* /usr/share/z-push
 
+addgroup --system zarafa
+adduser --system --home /dev/null --no-create-home --ingroup zarafa --disabled-password --gecos 'Zarafa services' --shell /bin/false zarafa
+
 chown -R www-data:zarafa /var/lib/z-push
 chown -R www-data:zarafa /var/log/z-push
 chown -R www-data:zarafa /usr/share/z-push
